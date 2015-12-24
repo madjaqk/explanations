@@ -1,0 +1,1 @@
+f=lambda a,b,n:f((a+b)/2,(a*b)**.5,n-1)if n else(a,b)
