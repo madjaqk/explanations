@@ -70,7 +70,7 @@ A callback is a function that's passed into another function as a parameter.  Le
 sorted(animals, key=lambda x: x.find("e")) # ['eagle', 'emu', 'seal', 'monkey', 'giraffe']
 ```
 
-`sorted` takes an optional parameter, `key`, that's a callback function, and sorts the list based on the results of that function.  As before, we can accomplish the same thing with a named function:
+`sorted` takes an optional parameter, `key`, that's a callback function, and sorts the list based on the results of that function.  `'eagle'.find('e')` = 1, so it's first, `'giraffe'.find('e')` = 7, so it's last, and so forth.  (I believe when the key returns the same value for two entries, as with 'eagle' and 'emu' here, it defaults to the normal order.)  As before, we can accomplish the same thing with a named function:
 
 ```python
 def find_first_e(word):
