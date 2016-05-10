@@ -145,7 +145,7 @@ reduce(lambda a,b: b**(a%b), nums) # 625 (left as an exercise for the reader)
 
 ##A Word Of Warning
 
-Anonymous functions can be powerful and callbacks more generally are quite important (and even moreso in other languages such as JavaScript).  However, as I mentioned, they're held in somewhat low esteem in Python.  That's because Python has its own syntax that frequently renders them unnecessary.  The underscore library functions mentioned above can all be replicated with a combination of list comprehension and generator expressions.  (Those terms don't mean much, I know, but they'll make it easier for you to look up answers if something breaks.)
+Anonymous functions can be powerful and callbacks more generally are quite important (and even moreso in other languages such as JavaScript).  However, as I mentioned, they're held in somewhat low esteem in Python.  That's because Python has its own syntax that frequently renders them unnecessary.  The underscore library functions mentioned above can all be replicated with a combination of *list comprehension* and *generator expressions*.  (Those terms don't mean much on their own, I know, but they'll make it easier for you to look up answers if something breaks.)
 
 ```python
 nums = [2,3,4,5]
