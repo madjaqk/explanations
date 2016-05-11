@@ -68,7 +68,7 @@ Some other linear-time operations:
 
 Continuing from above, if your function does a linear-time operation once for every item in your input, or a constant-time operation n times for every item, it takes `O(n^2)`, or quadratic, time.  For bubble sort, each loop through the list comparing and potentially swapping adjacent elements takes linear time, and it could take up to n times through the list before everything's in order.  Other `O(n^2)` algorithms include:
 
-* Finding a value in a 2-dimensional array (an array of arrays)
+* Checking if a value is in a 2-dimensional array (an array of arrays)
 * Selection sort
 * Insertion sort
 * Pretty much any other sort easy enough that you might think to implement it by hand
@@ -97,7 +97,7 @@ def binary_search(arr, num):
         return False
 ```
 
-What's the time complexity?  If you're using the rule of thumb, you might say `O(n)` because there's one loop.  However, look more closely.  The binary search eliminates half of the potential search space each time, so the while loop runs at most log-2 times.  (Need a refresher on logarithms?  Try this [University of Utah site](http://www.math.utah.edu/~pa/math/log.html) from 1997, ideally on the newest version of Netscape.)  `O(log n)` is fantastic: If you double the length of your array, worst-case it will only take one additional pass of the loop!  Unfortunately, most problems don't have a log time solution.
+What's the time complexity?  If you're using the rule of thumb, you might say `O(n)` because there's one loop.  However, look more closely.  The binary search eliminates half of the potential search space each time, so the while loop runs at most log<sub>2</sub> times.  (Need a refresher on logarithms?  Try this [University of Utah site](http://www.math.utah.edu/~pa/math/log.html) from 1997, ideally on the newest version of Netscape.)  `O(log n)` is fantastic: If you double the length of your array, worst-case it will only take one additional pass of the loop!  Unfortunately, most problems don't have a log time solution.
 
 More common is `O(n log n)`.  It's hard to conceptualize or recognize off-hand, but this would be algorithms that do a linear number of operations a logarithmic number of times.  Clever sort algorithms, like quicksort or mergesort, fall into this camp, as they involve recursively cutting a list in half, based on a function that looks at every element in each sublist once.  In fact, it's been proven that comparison-based sorting can't be any better than `O(n log n)`.
 
@@ -111,11 +111,11 @@ def fib(n):
 		return fib(n-2) + fib(n-1)
 ```
 
-What's the time complexity?  Well, the first level calls the function twice, so the second level involves four function calls, then eight, then sixteen... In fact, this is `O(2^n)`!  Ay-yi-yi!  (This is why you may have heard me say that recursive Fibonacci is a trap.)  Listing all of the possible subsets of a set is likely also 2^n time.
+What's the time complexity?  Well, the first level calls the function twice, so the second level involves four function calls, then eight, then sixteen... In fact, this is `O(2^n)`!  Ay-yi-yi!  (This is why you may have heard me say that recursive Fibonacci is a trap.)  Listing all of the possible subsets of a set is also 2^n time.
 
 Even worse than that is `O(n!)`.  When time complexity gets that bad, it's hard to find simple examples, but this would include a brute-force solution to the [travelling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem), or any other function that looks at every possible permutation of a given set.
 
-`O(2^n)` and `O(n!)` aren't good, obviously, but sometimes they're unavoidable.  In fact, it's generally believed (though not yet proven) that many interesting problems, ranging from how to efficiently pack a knapsack to factoring the product of two large primes to solving a sudoku puzzle, can't be solved better than `O(2^n)`.  (It's always been proved, somewhat surprisingly, that these problems are equally hard, computationally speaking; one problem can be transformed into another in polynomial time.  This means that if you come up with a very clever sudoku solver, you might at the same time be undermining all modern cryptography.)
+`O(2^n)` and `O(n!)` aren't good, obviously, but sometimes they're unavoidable.  In fact, it's generally believed (though not yet proven) that many interesting problems, ranging from how to efficiently pack a knapsack to factoring the product of two large primes to solving a sudoku puzzle, can't be solved better than `O(2^n)`.  (It's already been proved, somewhat surprisingly, that these problems are equally hard, computationally speaking; one problem can be transformed into another in polynomial time.  This means that if you come up with a very clever sudoku solver, you might at the same time undermine all modern cryptography.)
 
 ##Further Thoughts
 
