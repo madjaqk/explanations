@@ -56,14 +56,14 @@ def max_val(arr):
 
 As you can see, if your array has n items, the `max_val` function does n constant-time operations (setting or comparing variables).  If you think of the constant operations as taking 1 time-unit, then this must take 1*n time-units.
 
-"But wait!" you might be saying.  "Consider the array `[1,2,3,4]`!  You claim that will take 4 time-units, but since both comparing and setting a variable take 1, this will really take 7!  This should be `O(2n-1)`!"  First, pat yourself on the back, that's a very astute point.  Second, it turns out it doesn't really matter.  When we talk about time complexity, we're generally a) just comparing to other functions as also measured in Big O notation, and b) thinking about arbitarily large input.  Once n gets big, really really big, that "-1" won't make a difference, so we can say `O(2n)`.  Similarly, once n is large enough, a*n will be larger than b, and less than c*n^2 no matter what (positive) values of a, b, and c you choose, so we can just say `O(n)`.
+"But wait!" you might be saying.  "Consider the array `[1,2,3,4]`!  You claim that will take 4 time-units, but since both comparing and setting a variable take 1, this will really take 7!  This should be `O(2n-1)`!"  First, pat yourself on the back, that's a very astute point.  Second, it turns out it doesn't really matter.  When we talk about time complexity, we're generally a) just comparing to other functions as also measured in Big O notation, and b) thinking about arbitarily large input.  Once n gets big, really really big, that "-1" won't make a difference, so we can say `O(2n)`.  Similarly, once n is large enough, a\*n will be larger than b, and less than c\*n^2 no matter what (positive) values of a, b, and c you choose, so we can just say `O(n)`.
 
 Some other linear-time operations:
 
 * Checking if a value is in an unsorted array (`"foo" in arr`)
 * Finding all even numbers in an array (`[i for i in arr if i%2==0]`)
-* Creating a dictionary based on an array, with keys the unique answers in the array and values how many times they appear.
 * Checking if a string is a palindrome
+* Creating a dictionary based on an array, with keys the unique answers in the array and values how many times they appear.
 * Finding a value in a singly-linked list
 
 Continuing from above, if your function does a linear-time operation once for every item in your input, or a constant-time operation n times for every item, it takes `O(n^2)`, or quadratic, time.  For bubble sort, each loop through the list comparing and potentially swapping adjacent elements takes linear time, and it could take up to n times through the list before everything's in order.  Other `O(n^2)` algorithms include:
@@ -73,7 +73,7 @@ Continuing from above, if your function does a linear-time operation once for ev
 * Insertion sort
 * Pretty much any other sort easy enough that you might think to implement it by hand
 
-The naive, first-guess approach to solving a problem is usually `O(n^2)` or worse.  As a rule of thumb, you can guess a program's time complexity by counting the number of nested loops.  One loop is linear, two is quadratic, three is cubic, and so forth.  (This class of algorithms, with time complexity `O(n^a)` or better, are known as "polynomial time.")  This approximation breaks down for more complicated or clever code (it's possible to write something with a nested for-loop that's still in linear time, for example), but generally you should be wary if you have a loop inside of a loop.
+The naive, first-guess approach to solving a problem is usually `O(n^2)` or worse.  As a rule of thumb, you can guess a program's time complexity by counting the number of nested loops.  One loop is linear, two is quadratic, three is cubic, and so forth.  (This class of algorithms, with time complexity `O(n^a)` or better, are known as "polynomial time.")  This approximation breaks down for more complicated or clever code, but generally you should be wary if you have a loop inside of a loop.
 
 ##And Beyond
 
@@ -111,7 +111,7 @@ def fib(n):
 		return fib(n-2) + fib(n-1)
 ```
 
-What's the time complexity?  Well, the first level calls the function twice, so the second level involves four function calls, then eight, then sixteen... In fact, this is `O(2^n)`!  Ay-yi-yi!  (This is why I say that recursive Fibonacci is a trap.)  Listing all of the possible subsets of a set is likely also 2^n time.
+What's the time complexity?  Well, the first level calls the function twice, so the second level involves four function calls, then eight, then sixteen... In fact, this is `O(2^n)`!  Ay-yi-yi!  (This is why you may have heard me say that recursive Fibonacci is a trap.)  Listing all of the possible subsets of a set is likely also 2^n time.
 
 Even worse than that is `O(n!)`.  When time complexity gets that bad, it's hard to find simple examples, but this would include a brute-force solution to the [travelling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem), or any other function that looks at every possible permutation of a given set.
 
@@ -119,7 +119,7 @@ Even worse than that is `O(n!)`.  When time complexity gets that bad, it's hard 
 
 ##Further Thoughts
 
-* __Average case__: Though all of this, we've been looking at worst-case time complexity.  There's an argument that it would make more sense to focus on average-case instead; after all, that's what the performance will be most of time, whereas the worst case could be very rare.  (Indeed, the preferred method for maximizing a linear system, [Dantzig's simplex algorithm](https://en.wikipedia.org/wiki/Simplex_algorithm), is used because of its polynomial average case, although it's been shown to have worst-cast `O(2^n)`.)  It's worth keeping in mind, but programmers are a pessimistic lot, so the standard in the field is to look at worst-case.
+* __Average case__: Through all of this, we've been looking at worst-case time complexity.  There's an argument that it would make more sense to focus on average-case instead; after all, that's what the performance will be most of time, whereas the worst case could be very rare.  (Indeed, the preferred method for maximizing a linear system, [Dantzig's simplex algorithm](https://en.wikipedia.org/wiki/Simplex_algorithm), is used because of its polynomial time average case, although it's been shown to have worst-cast `O(2^n)`.)  It's worth keeping in mind, but programmers are a pessimistic lot, so the standard in the field is to look at worst-case.
 * __Best case__: Similarly, you might be wondering about best-case time complexity.  This is usually only a curiousity, but understanding what type of input would lead to your best-case performance can be very helpful, as if you know your data will look a certain way you can tailor your algorithm to fit it.  For example, if you don't know anything about the data that will be fed in, you'd never choose bubble sort over quicksort.  However, if you know your data will already be almost entirely sorted, with maybe a few elements slightly out of place, then bubble sort will be very close to its `O(n)` best-case, whereas quicksort will still take `O(n log n)`.
 * __Space complexity__: We can also measure space complexity, how much memory a program will need, in terms of Big O notation.  It's generally less important than time complexity in modern environments--it's easier to add memory to your system than add hours to the day--but it's an important consideration if you're working in a system with tight limits on memory, such as a wristwatch or a Mars lander, or if you're trapped decades in the past.  There's generally a trade off between time and space, with fast algorithms requiring more memory, but it's not definitive; you can write something that both takes a long time *and* uses all of your memory (like, say, recursive Fibonacci).
 * __`O(∞)`__: Just for fun, here's an example of an algorithm with the worst possible performance.  Behold the bogosort:  
