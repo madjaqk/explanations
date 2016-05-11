@@ -43,13 +43,13 @@ lambda num: num*2
 And here's a lambda that takes multiple parameters:
 
 ```python
-lambda a,b: return a**2 + b**2
+lambda a,b: a*a + b*b
 ```
 
 It's not too useful on its own, but we can assign it to a variable.
 
 ```python
-f = lambda a,b: return a**2 + b**2
+f = lambda a,b: a*a + b*b
 f(3,4) # 25
 ```
 
@@ -57,7 +57,7 @@ Of course, anything you can write as a lambda can also be written as a named fun
 
 ```python
 def f(a,b):
-	return a**2 + b**2
+	return a*a + b*b
 ```
 
 The lambda version is shorter, but more importantly, it's more convenient to use as a callback.
@@ -114,11 +114,7 @@ Takes in a function and an iterable (a list, dictionary, or anything else you ca
 
 ```python
 nums = [2,3,4,5]
-for i in map(lambda x: x**x, nums): print(i)
-# 4
-# 27
-# 256
-# 3125
+list(map(lambda x: x*(x+1), nums)) # [6, 12, 20, 30]
 ```
 
 ####Filter
