@@ -96,6 +96,14 @@ sorted(animals, key=lambda x: math.sin(ord(x[-1]))) # ['emu', 'eagle', 'giraffe'
 
 As that last example shows, lambdas can get pretty complicated while still a single line, and they have something of a reputation in the Python community for being ugly.  In real code, you may want to consider making that into a named function just for readability.
 
+You can also add a `key` parameter to `max` and `min`.  One common task is to find the key in a dictionary with the highest or lowest associated value.  Lambdas make that a snap.
+
+```python
+data = {"alpha": 4, "bravo": 2, "charlie": 7, "delta": 1, "echo": 5, "foxtrot": 3}
+max(data, key=lambda x: data[x]) # 'charlie'
+min(data, key=lambda x: data[x]) # 'delta'
+```  
+
 ##Other Uses
 
 Beginning programmers can have trouble thinking about callback functions.  When would a function ever take another function as an argument?  Here are some examples that the platform presents under the umbrella of the Underscore.js library:
