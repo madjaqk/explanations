@@ -132,7 +132,7 @@ The opposite of filter.  Returns the items in an iterable where the given functi
 
 ```python
 nums = [2,3,4,5]
-list(reject(lambda x: x%2==0, nums)) # [1,3]
+list(reject(lambda x: x%2==0, nums)) # [3,5]
 # (This won't actually work, as Python doesn't have a built-in reject function, though you'll write one in the underscore assignment.)
 ```
 
