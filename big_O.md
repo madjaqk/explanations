@@ -111,11 +111,11 @@ def fib(n):
 		return fib(n-2) + fib(n-1)
 ```
 
-What's the time complexity?  Well, the first level calls the function twice, so the second level involves four function calls, then eight, then sixteen... In fact, this is `O(2^n)`!  Ay-yi-yi!  (This is why you may have heard me say that recursive Fibonacci is a trap.)  Listing all of the possible subsets of a set is also 2^n time.
+What's the time complexity?  Well, the first level calls the function twice, so the second level involves four function calls, then eight, then sixteen... In fact, this is `O(2^n)`!  Ay-yi-yi!  (This is why you may have heard me say that recursive Fibonacci is a trap.)  Listing all of the possible subsets of a set is also 2<super>n</super> time.
 
 Even worse than that is `O(n!)`.  When time complexity gets that bad, it's hard to find simple examples, but this would include a brute-force solution to the [travelling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem), or any other function that looks at every possible permutation of a given set.
 
-`O(2^n)` and `O(n!)` aren't good, obviously, but sometimes they're unavoidable.  In fact, it's generally believed (though not yet proven) that many interesting problems, ranging from how to efficiently pack a knapsack to factoring the product of two large primes to solving a sudoku puzzle, can't be solved better than `O(2^n)`.  (It's already been proved, somewhat surprisingly, that these problems are equally hard, computationally speaking; one problem can be transformed into another in polynomial time.  This means that if you come up with a very clever sudoku solver, you might at the same time undermine all modern cryptography.)
+`O(2^n)` and `O(n!)` aren't good, obviously, but sometimes they're unavoidable.  In fact, it's generally believed (though not yet proven) that many interesting problems, ranging from how to efficiently pack a knapsack to factoring the product of two large primes to solving a sudoku puzzle, can't be solved better than `O(2^n)`.  (It's already been proven, somewhat surprisingly, that these problems are equally hard, computationally speaking; one problem can be transformed into another in polynomial time.  This means that if you come up with a very clever sudoku solver, you might at the same time undermine all modern cryptography.)
 
 ##Further Thoughts
 
