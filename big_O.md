@@ -111,7 +111,7 @@ def fib(n):
 		return fib(n-2) + fib(n-1)
 ```
 
-What's the time complexity?  Well, the first level calls the function twice, so the second level involves four function calls, then eight, then sixteen... In fact, this is `O(2^n)`!  Ay-yi-yi!  (This is why you may have heard me say that recursive Fibonacci is a trap.)  Listing all of the possible subsets of a set is also 2<super>n</super> time.
+What's the time complexity?  Well, the first level calls the function twice, so the second level involves four function calls, then eight, then sixteen... In fact, this is `O(2^n)`!  Ay-yi-yi!  (This is why you may have heard me say that recursive Fibonacci is a trap.)  Listing all of the possible subsets of a set is also 2<sup>n</sup> time.
 
 Even worse than that is `O(n!)`.  When time complexity gets that bad, it's hard to find simple examples, but this would include a brute-force solution to the [travelling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem), or any other function that looks at every possible permutation of a given set.
 
