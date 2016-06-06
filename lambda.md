@@ -70,7 +70,7 @@ A callback is a function that's passed into another function as a parameter.  Le
 sorted(animals, key=lambda x: x.find("e")) # ['eagle', 'emu', 'seal', 'monkey', 'giraffe']
 ```
 
-`sorted` takes an optional parameter, `key`, that's a callback function, and sorts the list based on the results of that function.  `'eagle'.find('e')` = 1, so it's first, `'giraffe'.find('e')` = 7, so it's last, and so forth.  (I believe when the key returns the same value for two entries, as with 'eagle' and 'emu' here, it defaults to the normal order.)  As before, we can accomplish the same thing with a named function:
+`sorted` takes an optional parameter, `key`, that's a callback function, and sorts the list based on the results of that function.  `'eagle'.find('e')` = 1, so it's first, `'giraffe'.find('e')` = 7, so it's last, and so forth.  (When the key returns the same value for two entries, as with 'eagle' and 'emu' here, it defaults to the normal order.)  As before, we can accomplish the same thing with a named function:
 
 ```python
 def find_first_e(word):
@@ -144,7 +144,7 @@ Changes an iterable into a single value by repeatedly applying a given function 
 from functools import reduce # In Python 3, reduce was moved from the standard library to the functools module
 reduce(lambda a,b: a+b, nums) # 14 = 2 + 3 + 4 + 5
 reduce(lambda a,b: a*b, nums) # 120 = 2 * 3 * 4 * 5
-reduce(lambda a,b: b**(a%b), nums) # 625 (left as an exercise for the reader)
+reduce(lambda a,b: b*(a%b), nums) # 15 (left as an exercise for the reader)
 ```
 
 ##A Word Of Warning
@@ -155,7 +155,7 @@ Anonymous functions can be powerful and callbacks more generally are quite impor
 nums = [2,3,4,5]
 
 # map
-[i**i for i in nums] # [4,27,256,3125]
+[i*(i+1) for i in nums] # [6,12,20,30]
 
 # filter
 [i for i in nums if i%2==0] # [2,4]
