@@ -4,7 +4,7 @@
 
 Every point on this graph represents a city, and the number on the line between two cities is the distance between them.  Your challenge:  Find the path that visits every city once (ending in the same city you started in) with the lowest possible length.
 
-### Adjacency Matrix
+## Adjacency Matrix
 
 That picture above is easy for a human to interpret, but not great for a computer.  Enter the adjacency matrix!  It's a chart that shows the distance from every city to every other city.
 
@@ -36,7 +36,7 @@ distances = [
 
 Note that we no longer refer to the cities with letters; instead, cities are represented as their index into the array.  To find the distance from G to C, for instance, we would look at `distances[6][2]`.  (The arbitrarily large value could also be `Infinity` in JavaScript or `float("inf")` in Python, two constants defined as being greater than any other number in the language.)
 
-### Test Cases
+## Test Cases
 
 Here are some more (randomly generated) cases to use when testing your code:
 
@@ -107,7 +107,18 @@ distances = [
 	]
 ```
 
-### PS
+## This is hard!
+
+You're right, it is!  In fact it's *NP-hard*.  That term has a technical definition (you can read about it on [Wikipedia](https://en.wikipedia.org/wiki/P_versus_NP_problem), for instance), but for our purposes, it means that:
+
+1. There's no known polynomial time algorithm, and many theoreticians believe there never will be (though this is still a very open question)
+2. It can be transformed into any other NP-hard problem in polynomial time
+
+The first statement gets at the difficulty: There don't need to be that many cities for finding the absolute best solution to become infeasible.  The 20-city test case below is too vast from my computer to solve in a reasonable amount of time.  When you're dealing with an NP-hard problem, the question rapidly goes from *How can I get the best answer?* to *How can I get a good enough answer quickly?*
+
+The second statement shows why these problems are important.  If you can find an algorithm that does solve the travelling salesman problem in polynomial time, you will also have found the best known solution to hundreds of other open problems in many different fields.  
+
+## PS
 
 Here's my answer for the graph from the beginning:
 
