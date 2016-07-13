@@ -141,4 +141,4 @@ This is average-case factorial time, worst-case infinite time.
 ##Futher Reading
 
 * [Big O cheat sheet](http://bigocheatsheet.com/)
-* Dionysis Zindros's [Gentle Introduct to Algorithm Complexity Analysis](http://discrete.gr/complexity/) is very good and a little more technical than I was aiming for here
+* Dionysis Zindros's [Gentle Introduction to Algorithm Complexity Analysis](http://discrete.gr/complexity/) is very good and a little more technical than I was aiming for here
