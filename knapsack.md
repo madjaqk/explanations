@@ -189,6 +189,6 @@ You're right, it is!  In fact it's *NP-hard*.  That term has a technical definit
 1. There's no known polynomial time algorithm, and many theoreticians believe there never will be (though this is still a very open question)
 2. It can be transformed into any other NP-hard problem in polynomial time
 
-The first statement gets at the difficulty: There don't need to be that many cities for finding the absolute best solution to become infeasible.  The 80-item test case above is too vast for my computer to solve in a reasonable amount of time.  When you're dealing with an NP-hard problem, the question rapidly goes from *How can I get the best answer?* to *How can I get a good enough answer quickly?*
+The first statement gets at the difficulty: There don't need to be that many cities for finding the absolute best solution to become infeasible.  The 100-item test case above is too vast for my computer to solve in a reasonable amount of time.  When you're dealing with an NP-hard problem, the question rapidly goes from *How can I get the best answer?* to *How can I get a good enough answer quickly?*
 
 The second statement shows why these problems are important.  If you can find an algorithm that does solve the travelling salesman problem in polynomial time, you will also have found the best known solution to hundreds of other open problems in many different fields.  
