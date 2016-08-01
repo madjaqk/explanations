@@ -58,6 +58,8 @@ Assignments: Through E-mail validation in class, finished with Login/Registratio
 
 ## Monday, August 15
 
+GitHub practice
+
 Assignments: Through Semi-RESTful Routes
 
 ## Tuesday, August 16
