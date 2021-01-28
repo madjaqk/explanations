@@ -22,11 +22,11 @@ sorted(animals, key=lambda x: x.find("e")) # ['eagle', 'emu', 'seal', 'monkey', 
 
 Woah, woah, woah--What just happened?  What's `lambda`?
 
-##Lambda
+## Lambda
 
 The term "lambda" comes from an attempt to formally define mathematics from the 1930s.  You can read about it on [Wikipedia](https://en.wikipedia.org/wiki/Lambda_calculus), and if you understand it, maybe you can explain it to me.  I like another name for the same concept, "anonymous functions".  As that suggests, a lambda function is just a function that doesn't have a specific name.  Why would we want that?  Because it's a function we'll only use in one place.
 
-##Anatomy of an Anonymous Function
+## Anatomy of an Anonymous Function
 
 There are three pieces to a lambda function:
 
@@ -62,7 +62,7 @@ def f(a,b):
 
 The lambda version is shorter, but more importantly, it's more convenient to use as a callback.
 
-##Callback?
+## Callback?
 
 A callback is a function that's passed into another function as a parameter.  Let's take another look at the `sorted` example from earlier:
 
@@ -104,11 +104,11 @@ max(data, key=lambda x: data[x]) # 'charlie'
 min(data, key=lambda x: data[x]) # 'delta'
 ```  
 
-##Other Uses
+## Other Uses
 
 Beginning programmers can have trouble thinking about callback functions.  When would a function ever take another function as an argument?  Here are some examples that the platform presents under the umbrella of the Underscore.js library:
 
-####Map
+#### Map
 
 Takes in a function and an iterable (a list, dictionary, or anything else you can loop through) and outputs the results of applying that function to every element of the iterable.
 
@@ -117,7 +117,7 @@ nums = [2,3,4,5]
 list(map(lambda x: x*(x+1), nums)) # [6, 12, 20, 30]
 ```
 
-####Filter
+#### Filter
 
 Takes in a function that returns a boolean (true/false) value and an iterable and outputs an iterable with the items were the function would return true.
 
@@ -126,7 +126,7 @@ nums = [2,3,4,5]
 list(filter(lambda x: x%2==0, nums)) # [2,4]
 ```
 
-####Reject
+#### Reject
 
 The opposite of filter.  Returns the items in an iterable where the given function returns false.
 
@@ -136,7 +136,7 @@ list(reject(lambda x: x%2==0, nums)) # [3,5]
 # (This won't actually work, as Python doesn't have a built-in reject function, though you'll write one in the underscore assignment.)
 ```
 
-####Reduce
+#### Reduce
 
 Changes an iterable into a single value by repeatedly applying a given function to each element in turn.
 
@@ -147,7 +147,7 @@ reduce(lambda a,b: a*b, nums) # 120 = 2 * 3 * 4 * 5
 reduce(lambda a,b: b*(a%b), nums) # 15 (left as an exercise for the reader)
 ```
 
-##A Word Of Warning
+## A Word Of Warning
 
 Anonymous functions can be powerful and callbacks more generally are quite important (and even moreso in other languages such as JavaScript).  However, as I mentioned, they're held in somewhat low esteem in Python.  That's because Python has its own syntax that frequently renders them unnecessary.  The underscore library functions mentioned above can all be replicated with a combination of *list comprehension* and *generator expressions*.  (Those terms don't mean much on their own, I know, but they'll make it easier for you to look up answers if something breaks.)
 
