@@ -75,7 +75,7 @@ Continuing from above, if your function does a linear-time operation once for ev
 
 The naive, first-guess approach to solving a problem is usually `O(n^2)` or worse.  As a rule of thumb, you can guess a program's time complexity by counting the number of nested loops.  One loop is linear, two is quadratic, three is cubic, and so forth.  (This class of algorithms, with time complexity `O(n^a)` or better, are known as "polynomial time.")  This approximation breaks down for more complicated or clever code, but generally you should be wary if you have a loop inside of a loop.
 
-##And Beyond
+## And Beyond
 
 Consider this function:
 
@@ -117,7 +117,7 @@ Even worse than that is `O(n!)`.  When time complexity gets that bad, it's hard 
 
 `O(2^n)` and `O(n!)` aren't good, obviously, but sometimes they're unavoidable.  In fact, it's generally believed (though not yet proven) that many interesting problems, ranging from how to efficiently pack a knapsack to factoring the product of two large primes to solving a sudoku puzzle, can't be solved better than `O(2^n)`.  (It's already been proven, somewhat surprisingly, that these problems are equally hard, computationally speaking; one problem can be transformed into another in polynomial time.  This means that if you come up with a very clever sudoku solver, you might at the same time undermine all modern cryptography.)
 
-##Further Thoughts
+## Further Thoughts
 
 * __Average case__: Through all of this, we've been looking at worst-case time complexity.  There's an argument that it would make more sense to focus on average-case instead; after all, that's what the performance will be most of time, whereas the worst case could be very rare.  (Indeed, the preferred method for maximizing a linear system, [Dantzig's simplex algorithm](https://en.wikipedia.org/wiki/Simplex_algorithm), is used because of its polynomial time average case, although it's been shown to have worst-cast `O(2^n)`.)  It's worth keeping in mind, but programmers are a pessimistic lot, so the standard in the field is to look at worst-case.
 * __Best case__: Similarly, you might be wondering about best-case time complexity.  This is usually only a curiousity, but understanding what type of input would lead to your best-case performance can be very helpful, as if you know your data will look a certain way you can tailor your algorithm to fit it.  For example, if you don't know anything about the data that will be fed in, you'd never choose bubble sort over quicksort.  However, if you know your data will already be almost entirely sorted, with maybe a few elements slightly out of place, then bubble sort will be very close to its `O(n)` best-case, whereas quicksort will still take `O(n log n)`.
@@ -138,7 +138,7 @@ def bogosort(arr):
 ```
 This is average-case factorial time, worst-case infinite time.
 
-##Futher Reading
+## Futher Reading
 
 * [Big O cheat sheet](http://bigocheatsheet.com/)
 * Dionysis Zindros's [Gentle Introduction to Algorithm Complexity Analysis](http://discrete.gr/complexity/) is very good and a little more technical than I was aiming for here
